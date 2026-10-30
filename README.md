@@ -9,7 +9,7 @@
 **Sistema propietario** de Kusarive Solutions LLC ·
 [English version](README.en.md) ·
 [Página de presentación](https://rjblancos.github.io/condoku-showcase/) ·
-**[Descargar la presentación en PDF](presentacion/Condoku-presentacion.pdf)** (17 diapositivas)
+**[Descargar la presentación en PDF](presentacion/Condoku-presentacion.pdf)** (18 diapositivas)
 
 ---
 
@@ -55,8 +55,13 @@ persona ve exactamente lo que le corresponde.
 - **Reclamos y novedades con seguimiento.** Tickets con categoría, prioridad y
   estado para que un residente reporte un problema y lo siga hasta resuelto, y
   un libro de novedades para conserjería y vigilancia, con aviso automático
-  cuando la severidad es alta. Documentos y comunicados quedan en un solo
-  lugar, con aviso al publicarse.
+  cuando la severidad es alta.
+- **Documentos y comunicados con visibilidad jerárquica.** Reglamento, actas
+  de asamblea, balances y avisos del condominio en un solo lugar, cada uno
+  visible solo para administración, junta, propietarios o todos los
+  residentes según corresponda — nunca un documento de la junta visible para
+  cualquiera por error. Un comunicado nuevo notifica a quien puede verlo, sin
+  que nadie tenga que entrar a revisar si hay algo nuevo.
 - **Torres, unidades y residentes siempre al día.** Apartamentos, locales y
   estacionamientos por torre, con alícuota calculada proporcional al área —
   nunca 1/N. Un inquilino que se mudó deja de aparecer solo; mientras dure el
@@ -98,6 +103,10 @@ persona ve exactamente lo que le corresponde.
 | Directorio | Usuarios de la administradora |
 |---|---|
 | ![Directorio](capturas/directorio.jpg) | ![Usuarios](capturas/usuarios.jpg) |
+
+| Documentos | Comunicados |
+|---|---|
+| ![Documentos](capturas/documentos.jpg) | ![Comunicados](capturas/comunicados.jpg) |
 
 Ensayo con condominios, torres, unidades y residentes inventados.
 
@@ -155,10 +164,11 @@ contabilidad o portería.
 
 - Web: [condoku.com](https://condoku.com)
 - Correo: [info@condoku.com](mailto:info@condoku.com)
-- Presentación: [PDF de 17 diapositivas](presentacion/Condoku-presentacion.pdf)
+- Presentación: [PDF de 18 diapositivas](presentacion/Condoku-presentacion.pdf)
 
 ## Novedades
 
+- **30-oct-2026** · Documentos y comunicados con visibilidad jerárquica por rol (reglamento, actas, balances y avisos).
 - **29-oct-2026** · Publicación de la vitrina, con su presentación en PDF descargable.
 
 Registro completo: [CHANGELOG.md](CHANGELOG.md).

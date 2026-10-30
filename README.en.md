@@ -9,7 +9,7 @@
 **Proprietary system** by Kusarive Solutions LLC ·
 [Versión en español](README.md) ·
 [Showcase page](https://rjblancos.github.io/condoku-showcase/) ·
-**[Download the presentation (PDF, in Spanish)](presentacion/Condoku-presentacion.pdf)** (17 slides)
+**[Download the presentation (PDF, in Spanish)](presentacion/Condoku-presentacion.pdf)** (18 slides)
 
 ---
 
@@ -57,8 +57,12 @@ every person sees exactly what they're entitled to.
 - **Tickets and logbook with follow-through.** Tickets with category,
   priority and status so a resident can report an issue and track it to
   resolution, plus a shift logbook for front-desk and security staff, with
-  automatic notification when severity is high. Documents and notices live in
-  one place, with a notification on publish.
+  automatic notification when severity is high.
+- **Documents and notices with tiered visibility.** Bylaws, meeting minutes,
+  financial statements and notices in one place, each visible only to
+  administration, the board, owners or every resident as it should be —
+  never a board document visible to anyone by mistake. A new notice alerts
+  whoever can see it, with nobody having to check whether something's new.
 - **Towers, units and residents always up to date.** Apartments, commercial
   units and parking spots organized by tower, with each unit's share
   calculated proportional to area — never a flat 1/N split. A tenant who
@@ -101,6 +105,10 @@ every person sees exactly what they're entitled to.
 | Directory | Management company users |
 |---|---|
 | ![Directory](capturas/directorio.jpg) | ![Users](capturas/usuarios.jpg) |
+
+| Documents | Notices |
+|---|---|
+| ![Documents](capturas/documentos.jpg) | ![Notices](capturas/comunicados.jpg) |
 
 Test environment with made-up condominiums, towers, units and residents; the
 interface is in Spanish.
@@ -160,10 +168,11 @@ collections, accounting or gate access.
 
 - Web: [condoku.com](https://condoku.com)
 - Email: [info@condoku.com](mailto:info@condoku.com)
-- Presentation: [17-slide PDF, in Spanish](presentacion/Condoku-presentacion.pdf)
+- Presentation: [18-slide PDF, in Spanish](presentacion/Condoku-presentacion.pdf)
 
 ## What's new
 
+- **30-Oct-2026** · Documents and notices with tiered visibility by role (bylaws, meeting minutes, financial statements and notices).
 - **29-Oct-2026** · Showcase published, with a downloadable PDF presentation.
 
 Full log: [CHANGELOG.md](CHANGELOG.md).
