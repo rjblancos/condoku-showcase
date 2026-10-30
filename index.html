@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Condoku · Kusarive Solutions LLC</title>
+<meta name="description" content="Cuotas, cobranza, contabilidad de partida doble, portería con código QR y soporte técnico, en un solo sistema pensado para el teléfono.">
+<style>
+:root{--bg:#f6f7f4;--card:#fff;--txt:#161d1a;--suave:#57625c;--linea:#dde3de;--acento:#1f6f5c;--acento-txt:#ffffff;--ok:#1f6f5c}
+@media (prefers-color-scheme:dark){:root{--bg:#10140f;--card:#1a211b;--txt:#eef1ea;--suave:#9fac9d;--linea:#2b352c;--acento:#3fa58a;--ok:#3fa58a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.envoltura{max-width:1040px;margin:0 auto;padding:0 16px}
+header{padding:28px 0 8px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.marca{font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+.marca span{background:var(--acento);color:var(--acento-txt);border-radius:6px;padding:2px 7px;margin-right:6px}
+.idioma button{background:none;border:1px solid var(--linea);color:var(--txt);border-radius:999px;padding:4px 12px;cursor:pointer;font:inherit;font-size:.85rem}
+.idioma button[aria-pressed=true]{background:var(--txt);color:var(--bg)}
+.idioma{display:flex;gap:6px;flex-shrink:0}
+.portada{padding:48px 0 24px}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:0 0 16px;letter-spacing:-.02em}
+.lema{font-size:1.15rem;color:var(--suave);max-width:680px;margin:0}
+.estado{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:.9rem;color:var(--suave)}
+.estado i{width:9px;height:9px;border-radius:50%;background:var(--ok);display:inline-block}
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:32px 0 8px}
+.cifra{background:var(--card);border:1px solid var(--linea);border-radius:14px;padding:18px 20px}
+.cifra b{display:block;font-size:2rem;letter-spacing:-.02em}
+.cifra small{color:var(--suave)}
+.nota{font-size:.82rem;color:var(--suave);margin:4px 0 0}
+h2{font-size:1.5rem;margin:56px 0 16px;letter-spacing:-.01em}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.bloque{background:var(--card);border:1px solid var(--linea);border-radius:14px;padding:18px 20px}
+.bloque h3{margin:0 0 6px;font-size:1.02rem}
+.bloque p{margin:0;color:var(--suave);font-size:.95rem}
+.par{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.par figure{margin:0}
+.par img{width:100%;height:auto;border-radius:12px;border:1px solid var(--linea);display:block}
+.par figcaption{font-size:.85rem;color:var(--suave);margin-top:6px}
+@media (max-width:720px){.par{grid-template-columns:1fr}}
+.pila{display:grid;gap:14px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+td{padding:12px 16px;border-top:1px solid var(--linea);vertical-align:top;font-size:.95rem}
+tr:first-child td{border-top:0}
+td:first-child{font-weight:700;white-space:nowrap;width:1%}
+.contacto{background:var(--card);border:1px solid var(--linea);border-radius:14px;padding:22px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.contacto a{color:var(--txt);font-weight:600}
+.boton{background:var(--acento);color:var(--acento-txt)!important;text-decoration:none;border-radius:10px;padding:10px 16px}
+footer{padding:40px 0;color:var(--suave);font-size:.85rem}
+[data-en]{display:none}
+html[lang=en] [data-es]{display:none}
+html[lang=en] [data-en]{display:revert}
+.cifra b[data-en]{display:none}html[lang=en] .cifra b[data-es]{display:none}html[lang=en] .cifra b[data-en]{display:block}
+@media (max-width:720px){td:first-child{white-space:normal}}
+.ancha{margin:24px 0 8px}.ancha img{width:100%;height:auto;border-radius:14px;border:1px solid var(--linea);display:block}
+.cta{background:var(--card);border:1px solid var(--linea);border-radius:14px;padding:28px;margin-top:8px}
+.cta h3{margin:0 0 6px;font-size:1.3rem}.cta p{margin:0 0 16px;color:var(--suave)}
+.descarga{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--acento);color:var(--acento-txt);text-decoration:none;border-radius:12px;padding:12px 18px;font-weight:700}
+.descarga small{font-weight:400;opacity:.85}
+@media (max-width:440px){.marca .sub{display:none!important}}
+.novedades{list-style:none;padding:0;margin:0;border-left:3px solid var(--acento);padding-left:18px}.novedades li{margin:0 0 10px;color:var(--suave)}.novedades b{color:var(--txt);margin-right:6px}
+</style>
+</head>
+<body>
+<div class="envoltura">
+<header>
+  <div class="marca"><span>Condoku</span><span class="sub" style="background:none;color:inherit;padding:0;margin:0" data-es>Administración de condominios</span><span class="sub" style="background:none;color:inherit;padding:0;margin:0" data-en>Condominium management</span></div>
+  <div class="idioma" role="group" aria-label="Idioma / Language">
+    <button type="button" data-l="es" aria-pressed="true">ES</button>
+    <button type="button" data-l="en" aria-pressed="false">EN</button>
+  </div>
+</header>
+
+<section class="portada">
+  <h1 data-es>Cuotas, cobranza y cuentas claras, en un solo sistema.</h1><h1 data-en>Dues, collections and clear books, in one system.</h1>
+  <p class="lema" data-es>Cobranza, contabilidad de partida doble, portería con código QR y soporte técnico, pensado primero para el teléfono. Para Hispanoamérica, empezando por Venezuela — y listo para adaptarse a otros países sin inconvenientes.</p><p class="lema" data-en>Collections, real double-entry accounting, QR-code gate access and technical support, built phone-first. For Spanish-speaking Latin America, starting with Venezuela — and ready to adapt to other countries without issue.</p>
+  <div class="estado"><i></i><span data-es>En construcción activa · disponible para demostración guiada · Sistema propietario de Kusarive Solutions LLC</span><span data-en>Actively being built · available for guided demos · Proprietary system by Kusarive Solutions LLC</span></div>
+  <div><a class="descarga" href="presentacion/Condoku-presentacion.pdf" download><span data-es>Descargar la presentación</span><span data-en>Download the presentation</span> <small><span data-es>PDF · 17 diapositivas</span><span data-en>PDF · 17 slides · in Spanish</span></small></a></div>
+  <div class="cifras">
+    <div class="cifra"><b>2.487</b><small data-es>pruebas automatizadas, sin fallos</small><small data-en>automated tests, zero failures</small></div>
+    <div class="cifra"><b>14</b><small data-es>épicas del roadmap construidas y auditadas</small><small data-en>roadmap epics built and audited</small></div>
+    <div class="cifra"><b>11</b><small data-es>roles, cada uno con lo suyo</small><small data-en>roles, each with their own screens</small></div>
+    <div class="cifra"><b>54</b><small data-es>permisos granulares</small><small data-en>granular permissions</small></div>
+  </div>
+</section>
+
+<div class="ancha"><img src="capturas/pagos.jpg" alt="Cobranza / Collections" width="1400" height="875"></div>
+<p class="nota" data-es>El administrador aprueba o anula un pago en segundos. Datos inventados.</p><p class="nota" data-en>The administrator approves or voids a payment in seconds. Made-up data; the interface is in Spanish.</p>
+
+<h2 data-es>Qué resuelve</h2><h2 data-en>What it solves</h2>
+<div class="rejilla">
+  <div class="bloque"><h3 data-es>Cuentas que nadie entiende</h3><h3 data-en>Books nobody understands</h3>
+    <p data-es>Sin un libro contable de verdad, cuadrar un balance a mano es lento y fácil de equivocar.</p><p data-en>Without a real accounting ledger, balancing the books by hand is slow and error-prone.</p></div>
+  <div class="bloque"><h3 data-es>Dólares y bolívares mezclados</h3><h3 data-en>Dollars and local currency mixed together</h3>
+    <p data-es>Cada pago llega en una moneda distinta, a una tasa distinta del día, convertida a mano.</p><p data-en>Every payment arrives in a different currency, at a different day's rate, converted by hand.</p></div>
+  <div class="bloque"><h3 data-es>Comunicación dispersa</h3><h3 data-en>Scattered communication</h3>
+    <p data-es>Un aviso en WhatsApp, un recibo por correo, un comprobante que se pierde en el chat.</p><p data-en>A notice on WhatsApp, a receipt by email, a payment proof lost in the chat.</p></div>
+  <div class="bloque"><h3 data-es>Portería sin control</h3><h3 data-en>Uncontrolled gate access</h3>
+    <p data-es>Un cuaderno de visitas que nadie puede auditar ni consultar en tiempo real.</p><p data-en>A paper visitor logbook nobody can audit or check in real time.</p></div>
+</div>
+
+<h2 data-es>Qué hace</h2><h2 data-en>What it does</h2>
+<div class="rejilla">
+  <div class="bloque"><h3 data-es>Cobranza con comprobante o en línea</h3><h3 data-en>Collections by proof or online</h3>
+    <p data-es>El propietario sube su comprobante, el administrador lo aprueba con un clic y el saldo se actualiza solo, aplicado primero a lo más antiguo (FIFO).</p><p data-en>The owner uploads their proof, the administrator approves it with one click, and the balance updates itself, applied first to the oldest debt (FIFO).</p></div>
+  <div class="bloque"><h3 data-es>Contabilidad de partida doble real</h3><h3 data-en>Real double-entry accounting</h3>
+    <p data-es>Libro diario, mayor y balance de comprobación, con un asiento detrás de cada movimiento — nunca una hoja de cálculo disfrazada.</p><p data-en>A journal, ledger and trial balance, with an entry behind every transaction — never a spreadsheet in disguise.</p></div>
+  <div class="bloque"><h3 data-es>Dólares y bolívares en cada recibo</h3><h3 data-en>Dollars and local currency on every receipt</h3>
+    <p data-es>La tasa del día queda guardada en el momento de cada movimiento, así que un recibo de hace meses sigue siendo exacto.</p><p data-en>The day's rate is stored at the moment of each transaction, so a receipt from months ago stays exact.</p></div>
+  <div class="bloque"><h3 data-es>Portería con código QR</h3><h3 data-en>QR-code gate access</h3>
+    <p data-es>Un pase de visita se valida escaneando el código o con un código corto de respaldo, con entrada y salida registradas.</p><p data-en>A visitor pass is validated by scanning a QR code or a short backup code, with entry and exit both logged.</p></div>
+  <div class="bloque"><h3 data-es>Reclamos y novedades con seguimiento</h3><h3 data-en>Tickets and logbook with follow-through</h3>
+    <p data-es>Tickets con categoría, prioridad y estado, y un libro de novedades para conserjería y vigilancia.</p><p data-en>Tickets with category, priority and status, plus a shift logbook for front-desk and security staff.</p></div>
+  <div class="bloque"><h3 data-es>Una cartera de condominios, una cuenta</h3><h3 data-en>One account for a whole portfolio</h3>
+    <p data-es>Una administradora gestiona varios condominios desde un solo lugar y cambia entre ellos sin cerrar sesión.</p><p data-en>A management company runs several condominiums from one place and switches between them without logging out.</p></div>
+  <div class="bloque"><h3 data-es>Soporte con compromiso de tiempo</h3><h3 data-en>Support with time commitments</h3>
+    <p data-es>Cuatro niveles de severidad, desde una hora de primera respuesta hasta 24 horas, con el reloj pausado al esperar al cliente.</p><p data-en>Four severity levels, from a one-hour first response to 24 hours, with the clock paused while waiting on the customer.</p></div>
+  <div class="bloque"><h3 data-es>Un rol para cada persona</h3><h3 data-en>One role per person</h3>
+    <p data-es>Administrador, contador, junta, propietario, inquilino, conserje, vigilante: cada uno ve solo lo suyo.</p><p data-en>Administrator, accountant, board member, owner, tenant, front-desk staff, security guard: everyone sees only their own.</p></div>
+</div>
+
+<h2 data-es>Capturas</h2><h2 data-en>Screenshots</h2>
+<div class="pila">
+  <div class="par">
+    <figure><img src="capturas/pagos.jpg" alt="Cobranza" loading="lazy" width="1400" height="875"><figcaption data-es>El administrador aprueba o anula un pago en segundos.</figcaption><figcaption data-en>The administrator approves or voids a payment in seconds.</figcaption></figure>
+    <figure><img src="capturas/estado_cuenta.jpg" alt="Estado de cuenta" loading="lazy" width="1400" height="875"><figcaption data-es>El propietario ve sus recibos, pagos y saldo, sin pedirle nada a nadie.</figcaption><figcaption data-en>The owner sees their invoices, payments and balance, without asking anyone.</figcaption></figure>
+  </div>
+  <div class="par">
+    <figure><img src="capturas/balance.jpg" alt="Balance de comprobación" loading="lazy" width="1400" height="875"><figcaption data-es>Balance de comprobación: el saldo de cada cuenta, listo para revisar.</figcaption><figcaption data-en>Trial balance: every account's balance, ready to review.</figcaption></figure>
+    <figure><img src="capturas/morosidad.jpg" alt="Morosidad por antigüedad" loading="lazy" width="1400" height="875"><figcaption data-es>Morosidad por antigüedad: quién debe, y desde cuándo, de un vistazo.</figcaption><figcaption data-en>Aging report: who owes, and since when, at a glance.</figcaption></figure>
+  </div>
+  <div class="par">
+    <figure><img src="capturas/tasas.jpg" alt="Tasa de cambio" loading="lazy" width="1400" height="875"><figcaption data-es>La misma tasa se usa en toda la plataforma, para todos los condominios.</figcaption><figcaption data-en>The same rate is used across the whole platform, for every condominium.</figcaption></figure>
+    <figure><img src="capturas/porteria.jpg" alt="Portería" loading="lazy" width="1400" height="875"><figcaption data-es>El vigilante valida la visita y ve quién está dentro ahora, en tiempo real.</figcaption><figcaption data-en>The guard validates the visit and sees who is on site right now, in real time.</figcaption></figure>
+  </div>
+  <div class="par">
+    <figure><img src="capturas/pases.jpg" alt="Pases de visita" loading="lazy" width="1400" height="875"><figcaption data-es>El propietario crea y consulta sus pases de visita desde el teléfono.</figcaption><figcaption data-en>The owner creates and checks their visitor passes from their phone.</figcaption></figure>
+    <figure><img src="capturas/tickets.jpg" alt="Tickets" loading="lazy" width="1400" height="875"><figcaption data-es>Tickets con categoría, prioridad y estado — nunca un reclamo en el aire.</figcaption><figcaption data-en>Tickets with category, priority and status — never an issue left hanging.</figcaption></figure>
+  </div>
+  <div class="par">
+    <figure><img src="capturas/novedades.jpg" alt="Libro de novedades" loading="lazy" width="1400" height="875"><figcaption data-es>Libro de novedades: lo que pasó en cada turno, consultable por la junta.</figcaption><figcaption data-en>Shift logbook: what happened on each shift, visible to the board.</figcaption></figure>
+    <figure><img src="capturas/unidades.jpg" alt="Unidades" loading="lazy" width="1400" height="875"><figcaption data-es>Cada unidad con su torre, su tipo, su área y su alícuota.</figcaption><figcaption data-en>Every unit with its tower, type, area and share.</figcaption></figure>
+  </div>
+  <div class="par">
+    <figure><img src="capturas/directorio.jpg" alt="Directorio" loading="lazy" width="1400" height="875"><figcaption data-es>Propietarios e inquilinos vigentes, por unidad, de un vistazo.</figcaption><figcaption data-en>Current owners and tenants, by unit, at a glance.</figcaption></figure>
+    <figure><img src="capturas/usuarios.jpg" alt="Usuarios de la administradora" loading="lazy" width="1400" height="875"><figcaption data-es>Cuentas de acceso de todo el equipo de la administradora.</figcaption><figcaption data-en>Access accounts for the whole management company team.</figcaption></figure>
+  </div>
+</div>
+<p class="nota" data-es>Ensayo con condominios, torres, unidades y residentes inventados.</p><p class="nota" data-en>Test environment with made-up condominiums, towers, units and residents; the interface is in Spanish.</p>
+
+<h2 data-es>Cada persona, con lo que su trabajo necesita</h2><h2 data-en>Each person, with what their job needs</h2>
+<table>
+  <tr><td data-es>Administrador</td><td data-en>Administrator</td><td><span data-es>Condominio, cobranza, contabilidad, usuarios y comunicados.</span><span data-en>Condominium, collections, accounting, users and notices.</span></td></tr>
+  <tr><td data-es>Contador</td><td data-en>Accountant</td><td><span data-es>Libro diario, mayor, balance de comprobación y gastos.</span><span data-en>Journal, ledger, trial balance and expenses.</span></td></tr>
+  <tr><td data-es>Junta</td><td data-en>Board member</td><td><span data-es>Consulta las cuentas y las novedades de su condominio, sin editar.</span><span data-en>Reviews their condominium's books and logbook, read-only.</span></td></tr>
+  <tr><td data-es>Administradora (cartera)</td><td data-en>Management company</td><td><span data-es>Gestiona varios condominios desde una sola cuenta.</span><span data-en>Runs several condominiums from one account.</span></td></tr>
+  <tr><td data-es>Superadministrador</td><td data-en>Platform superadmin</td><td><span data-es>Tasas de cambio y configuración general.</span><span data-en>Exchange rates and overall settings.</span></td></tr>
+  <tr><td data-es>Soporte de la plataforma</td><td data-en>Platform support</td><td><span data-es>Atiende los casos de todos los clientes desde una bandeja centralizada.</span><span data-en>Handles every customer's cases from one centralized queue.</span></td></tr>
+  <tr><td data-es>Propietario</td><td data-en>Owner</td><td><span data-es>Su estado de cuenta, sus pagos y sus pases de visita.</span><span data-en>Their account statement, payments and visitor passes.</span></td></tr>
+  <tr><td data-es>Inquilino</td><td data-en>Tenant</td><td><span data-es>El estado de cuenta de su unidad mientras dure el alquiler.</span><span data-en>Their unit's statement for the duration of the lease.</span></td></tr>
+  <tr><td data-es>Conserje</td><td data-en>Front-desk staff</td><td><span data-es>El libro de novedades de su turno.</span><span data-en>Their shift's logbook.</span></td></tr>
+  <tr><td data-es>Vigilante</td><td data-en>Security guard</td><td><span data-es>Valida pases de visita y ve quién está dentro ahora.</span><span data-en>Validates visitor passes and sees who is on site right now.</span></td></tr>
+</table>
+<p class="nota" data-es>Cada persona entra con su propia cuenta y ve solo los datos de su condominio.</p><p class="nota" data-en>Everyone signs in with their own account and sees only their own condominium's data.</p>
+
+<h2 data-es>Garantías técnicas</h2><h2 data-en>Technical guarantees</h2>
+<table>
+  <tr><td data-es>Aislamiento multi-condominio</td><td data-en>Multi-condominium isolation</td><td><span data-es>Una administradora gestiona varios condominios, pero los datos de uno nunca se mezclan con los de otro.</span><span data-en>A management company handles several condominiums, but one's data never mixes with another's.</span></td></tr>
+  <tr><td data-es>Doble autenticación</td><td data-en>Two-factor access</td><td><span data-es>Quien administra dinero o varios condominios necesita una segunda clave de un solo uso, además de su contraseña.</span><span data-en>Anyone handling money or several condominiums needs a one-time second code, on top of their password.</span></td></tr>
+  <tr><td data-es>Bitácora que nadie puede borrar</td><td data-en>A log nobody can erase</td><td><span data-es>Cada acción importante queda en una tabla de solo inserción: ni un administrador puede editarla después.</span><span data-en>Every important action lands in an insert-only table: not even an administrator can edit it afterwards.</span></td></tr>
+  <tr><td data-es>Contabilidad que no se reescribe</td><td data-en>Accounting that is never rewritten</td><td><span data-es>Un asiento ya contabilizado se corrige con un asiento de reverso, nunca editando el original.</span><span data-en>A posted entry is corrected with a reversing entry, never by editing the original.</span></td></tr>
+  <tr><td data-es>Permisos granulares</td><td data-en>Granular permissions</td><td><span data-es>54 permisos independientes: cada pantalla exige el suyo, no un simple «administrador ve todo».</span><span data-en>54 independent permissions: every screen requires its own, not a blanket "administrator sees everything."</span></td></tr>
+  <tr><td data-es>Calidad</td><td data-en>Quality</td><td><span data-es>2.487 pruebas automatizadas verifican el aislamiento, los permisos y los cálculos contables antes de cada cambio.</span><span data-en>2,487 automated tests verify isolation, permissions and accounting calculations before every change.</span></td></tr>
+</table>
+
+<h2 data-es>Construido con</h2><h2 data-en>Built with</h2>
+<table>
+  <tr><td>PHP</td><td><span data-es>Lógica: cobranza, contabilidad, portería, permisos y aislamiento multi-condominio, y las pantallas, pensadas primero para el teléfono.</span><span data-en>Logic: collections, accounting, gate access, permissions and multi-condominium isolation, plus the phone-first screens.</span></td></tr>
+  <tr><td>SQL</td><td><span data-es>Almacenamiento multi-condominio.</span><span data-en>Multi-condominium storage.</span></td></tr>
+</table>
+
+<h2 data-es>¿Listo para ponerle orden a las cuentas de su condominio?</h2><h2 data-en>Ready to put your condominium's books in order?</h2>
+<div class="cta">
+  <h3 data-es>Le mostramos el sistema en vivo</h3><h3 data-en>We'll show you the system live</h3>
+  <p data-es>Con un condominio de prueba armado para su caso: cuántos condominios administra y qué le pesa más hoy.</p><p data-en>With a test condominium set up for your case: how many condominiums you manage and what weighs on you most today.</p>
+  <div class="contacto" style="border:0;padding:0;background:none">
+    <div><strong>Kusarive Solutions LLC</strong></div>
+    <a href="https://condoku.com">condoku.com</a>
+    <a href="mailto:info@condoku.com">info@condoku.com</a>
+    <a href="presentacion/Condoku-presentacion.pdf" download><span data-es>Presentación en PDF</span><span data-en>Presentation (PDF)</span></a>
+  </div>
+</div>
+
+<h2 data-es>Novedades</h2><h2 data-en>What's new</h2>
+<ul class="novedades"><li><b data-es>29-oct-2026</b><b data-en>29-Oct-2026</b> <span data-es>Publicación de la vitrina, con su presentación en PDF descargable.</span><span data-en>Showcase published, with a downloadable PDF presentation.</span></li></ul>
+<p class="nota"><a href="https://github.com/rjblancos/condoku-showcase/blob/main/CHANGELOG.md">CHANGELOG.md</a></p>
+
+<footer>© 2026 Kusarive Solutions LLC.</footer>
+</div>
+
+<script>
+(function(){
+  var html=document.documentElement;
+  function poner(l){
+    html.lang=l;
+    document.querySelectorAll('.idioma button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    try{localStorage.setItem('idioma',l)}catch(e){}
+  }
+  document.querySelectorAll('.idioma button').forEach(function(b){b.addEventListener('click',function(){poner(b.dataset.l)})});
+  var g=null;try{g=localStorage.getItem('idioma')}catch(e){}
+  poner(g||((navigator.language||'es').slice(0,2)==='en'?'en':'es'));
+})();
+</script>
+</body>
+</html>
